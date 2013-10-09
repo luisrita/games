@@ -1,0 +1,11 @@
+
+/** PARALAX PAGE **/
+#home {
+  background: url(../images/bg_1.jpg) 50% 0 repeat fixed;
+  min-height: 1000px;
+}
+
+#about {
+  background: url(../images/bg_2.jpg) 50% 0 repeat fixed;
+  min-height: 1000px;
+}

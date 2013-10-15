@@ -105,3 +105,23 @@ for(var i = 0; i < keys.length; i++) {
 		e.preventDefault();
 	} 
 }
+
+/*
+// Callbacks
+obj = {};
+
+function getInfo(callback) {
+	obj.name = prompt("whats your name?");
+	obj.age = prompt("how old are you?");
+
+	if(typeof callback === "function") {
+		return callback(obj.name, obj.age)
+	}
+}
+
+function giveInfo(name, age) {
+	console.log("You are " + name + " and you are " +age+ " years old");
+}
+
+getInfo(giveInfo);
+*/

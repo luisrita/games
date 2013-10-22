@@ -311,13 +311,26 @@ body {
 
 /*** 3rd EXPERIMENT - TIMER ***/
 
+.container {
+  text-align: center;
+}
+
+.timer {
+  position: relative;
+  padding: 10px;
+  overflow: hidden;
+  display: inline-block;
+  border: 7px solid #888;
+  border-radius: 5px;
+}
+
 .cell {
+  display: inline-block;
   position: relative;
   width: 0.6em;
   height: 40px;
   font-size: 50px;
   overflow: hidden;
-  border: 1px solid black;
 }
 
 .numbers {
@@ -327,94 +340,67 @@ body {
   left: 0;
 }
 
-.square {
-  position: absolute;
-  left: 0;
-  width: 50px;
-  height: 50px;
-  background: red;
+.divider {
+  line-height: 30px;
+  text-align: center;
 }
 
-.slider-frame {
-  position: relative;
-  width: 400px;
-  height: 250px;
-  border: 1px solid black;
-  margin: 20px auto 50px;
-  overflow: hidden;
+input[name="controls"] {
+  display: none;
 }
 
-.pic-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: block;
-  width: 1800px;
+#start:checked ~ .timer .numbers {
+  animation-paly-state: running;
+}
+#stop:checked ~ .timer .numbers {
+  animation-play-state: paused;
+}
+#reset:checked ~ .timer .numbers {
+  animation: none;
 }
 
-.pic-one, .pic-two, .pic-three, .pic-four {
-  width: 400px;
-  height: 250px;
-  float: left;
+.time_controls {
+  margin-top: -10px;
 }
 
-.pic-one {
-  background-color: green;
+.time_controls label {
+  cursor: pointer;
+  background-color: #888;
+  color: #fff;
+  border-radius: 0 0 5px 5px;
+  padding: 5px 10px;
 }
 
-.pic-two {
-  background-color: orange;
+.moveten {
+  animation: moveten 1s steps(10, end) infinite;
 }
 
-.pic-three {
-  background-color: red;
+.movesix {
+  animation: movesix 1s steps(6, end) infinite;
 }
 
-.pic-four {
-  background-color: purple;
-}
+.tenhour {animation-duration: 360000s;}
+.hour {animation-duration: 36000s;}
 
-.move {
-  animation: move 1s steps(10, end) infinite;
-}
+.tenminute {animation-duration: 3600s;}
+.minute {animation-duration: 600s;}
 
-.rotate {
-  animation: rotate 1s steps(40, end) infinite, 
-             movehor 10s steps(500, end) infinite, 
-             scale steps(100, end), infinite;
-}
+.tensecond {animation-duration: 60s;}
+.second {animation-duration: 10s;}
 
-.slide {
-  animation: slide 20s cubic-bezier(1, 0, 0, 1) infinite;
-}
+.milisecond {animation-duration: 1s;}
+.tenmilisecond {animation-duration: 0.1s;}
+.hundredmilisecond {animation-duration: 0.01s;}
 
-@keyframes move {
+@keyframes moveten {
   0%{top:0;}
   100%{top:-400px;}
 }
 
-@keyframes rotate {
-  0%{transform:rotate(0deg);}
-  100%{transform:rotate(90deg);}
+@keyframes movesix {
+  0%{top:0;}
+  100%{top:-240px;}
 }
-
-@keyframes movehor {
-  0%{left: 0}
-  100%{left: 100%}
-}
-
-@keyframes scale {
-  0%{transform:scale(1);}
-  100%{transform:scale(0.2);}
-}
-
-@keyframes slide {
-  0%{left: 0}
-  33%{left: -400px}
-  66%{left: -800px}
-  100%{left: -1200px}
-}
-
 /*
 .container {
   text-align: center;
@@ -507,3 +493,87 @@ input[name="controls"] {
   100% {top:-240px;}
 }
 */
+
+
+
+
+/** Animation Experiments **/
+.square {
+  position: absolute;
+  left: 0;
+  width: 50px;
+  height: 50px;
+  background: red;
+}
+
+.slider-frame {
+  position: relative;
+  width: 400px;
+  height: 250px;
+  border: 1px solid black;
+  margin: 20px auto 50px;
+  overflow: hidden;
+}
+
+.pic-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 1800px;
+}
+
+.pic-one, .pic-two, .pic-three, .pic-four {
+  width: 400px;
+  height: 250px;
+  float: left;
+}
+
+.pic-one {
+  background-color: green;
+}
+
+.pic-two {
+  background-color: orange;
+}
+
+.pic-three {
+  background-color: red;
+}
+
+.pic-four {
+  background-color: purple;
+}
+
+.rotate {
+  animation: rotate 1s steps(40, end) infinite, 
+             movehor 10s steps(500, end) infinite, 
+             scale steps(100, end), infinite;
+}
+
+.slide {
+  animation: slide 20s cubic-bezier(1, 0, 0, 1) infinite;
+}
+
+@keyframes rotate {
+  0%{transform:rotate(0deg);}
+  100%{transform:rotate(90deg);}
+}
+
+@keyframes movehor {
+  0%{left: 0}
+  100%{left: 100%}
+}
+
+@keyframes scale {
+  0%{transform:scale(1);}
+  100%{transform:scale(0.2);}
+}
+
+@keyframes slide {
+  0%{left: 0}
+  33%{left: -400px}
+  66%{left: -800px}
+  100%{left: -1200px}
+}
+/****/

@@ -29,7 +29,6 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
-  height: 900px;
 }
 ol, ul {
 	list-style: none;
@@ -312,6 +311,111 @@ body {
 
 /*** 3rd EXPERIMENT - TIMER ***/
 
+.cell {
+  position: relative;
+  width: 0.6em;
+  height: 40px;
+  font-size: 50px;
+  overflow: hidden;
+  border: 1px solid black;
+}
+
+.numbers {
+  line-height: 40px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.square {
+  position: absolute;
+  left: 0;
+  width: 50px;
+  height: 50px;
+  background: red;
+}
+
+.slider-frame {
+  position: relative;
+  width: 400px;
+  height: 250px;
+  border: 1px solid black;
+  margin: 20px auto 50px;
+  overflow: hidden;
+}
+
+.pic-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 1800px;
+}
+
+.pic-one, .pic-two, .pic-three, .pic-four {
+  width: 400px;
+  height: 250px;
+  float: left;
+}
+
+.pic-one {
+  background-color: green;
+}
+
+.pic-two {
+  background-color: orange;
+}
+
+.pic-three {
+  background-color: red;
+}
+
+.pic-four {
+  background-color: purple;
+}
+
+.move {
+  animation: move 1s steps(10, end) infinite;
+}
+
+.rotate {
+  animation: rotate 1s steps(40, end) infinite, 
+             movehor 10s steps(500, end) infinite, 
+             scale steps(100, end), infinite;
+}
+
+.slide {
+  animation: slide 20s cubic-bezier(1, 0, 0, 1) infinite;
+}
+
+@keyframes move {
+  0%{top:0;}
+  100%{top:-400px;}
+}
+
+@keyframes rotate {
+  0%{transform:rotate(0deg);}
+  100%{transform:rotate(90deg);}
+}
+
+@keyframes movehor {
+  0%{left: 0}
+  100%{left: 100%}
+}
+
+@keyframes scale {
+  0%{transform:scale(1);}
+  100%{transform:scale(0.2);}
+}
+
+@keyframes slide {
+  0%{left: 0}
+  33%{left: -400px}
+  66%{left: -800px}
+  100%{left: -1200px}
+}
+
+/*
 .container {
   text-align: center;
 }
@@ -381,17 +485,17 @@ input[name="controls"] {
 }
 
 .second {animation-duration: 10s;}
-.tensecond {animation-duration: 60s;} /*60 times .second*/
+.tensecond {animation-duration: 60s;} 
 
-.milisecond {animation-duration: 1s;} /*1/10th of .second*/
+.milisecond {animation-duration: 1s;}
 .tenmilisecond {animation-duration: 0.1s;}
 .hundredmilisecond {animation-duration: 0.01s;}
 
-.minute {animation-duration: 600s;} /*60 times .second*/
-.tenminute {animation-duration: 3600s;} /*60 times .minute*/
+.minute {animation-duration: 600s;} 
+.tenminute {animation-duration: 3600s;} 
 
-.hour {animation-duration: 36000s;} /*60 times .minute*/
-.tenhour {animation-duration: 360000s;} /*10 times .hour*/
+.hour {animation-duration: 36000s;} 
+.tenhour {animation-duration: 360000s;} 
 
 @keyframes moveten {
   0% {top:0;}
@@ -402,3 +506,4 @@ input[name="controls"] {
   0% {top:0;}
   100% {top:-240px;}
 }
+*/

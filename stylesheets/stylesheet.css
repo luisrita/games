@@ -567,6 +567,26 @@ input[name="controls"] {
   background-color: #ebebeb;
 }
 
+.navbar {
+  position: fixed;
+  width: 100%;
+  padding: 20px 50px;
+  text-align: center;
+  background-color: #666;
+  font-size: 1.2em;
+  border-bottom: 1px solid #f3f3f3;
+}
+
+.navbar li {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #f3f3f3;
+}
+
 #home, #portfolio, #skills, #contact {
   margin: 0 auto;
   padding: 20px 0;

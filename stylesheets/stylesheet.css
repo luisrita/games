@@ -2,25 +2,12 @@
    v2.0 | 20110126
    License: none (public domain)
 */
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+* {
 	margin: 0;
 	padding: 0;
 	border: 0;
 	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+  box-sizing:border-box;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
@@ -598,10 +585,108 @@ input[name="controls"] {
 }
 
 .posters-container {
-  width: 600px;
+  position: relative;
+  width: 616px;
   height: 440px;
-  overflow: hidden;
   margin: 20px auto;
+  overflow: hidden;
   border: 8px solid #fff;
   box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.5);
+  background-color: black;
+}
+
+.image1, .image2, .image3, .image4, .image5, .image6 {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.vertical-image {
+  width: 600px;
+  display: block;
+  background-color: black;
+  text-align: center;
+}
+
+.posters-container img {
+  height: 430px;
+}
+
+.image1 {
+  animation: cycle 25s linear infinite;
+}
+
+.image2 {
+  animation: cycletwo 25s linear infinite;
+}
+
+.image3 {
+  animation: cyclethree 25s linear infinite;
+}
+
+.image4 {
+  animation: cyclefour 25s linear infinite;
+}
+
+.image5 {
+  animation: cyclefive 25s linear infinite;
+}
+
+.image6 {
+  animation: cyclesix 25s linear infinite;
+}
+
+@keyframes cycle {
+  0%  { left:0px; }
+  12.6% { left:0px; opacity:1; z-index:0; } 
+  16.6% { left:-600px; opacity:0; z-index:0; } /*16,6*/
+  17.6% { left:600px; opacity:0; z-index:-1; }
+  50% { left:600px; opacity:0; z-index:-1; }
+  92% { left:600px; opacity:0; z-index:0; }
+  96% { left:600px; opacity:0; }
+  100%{ left:0px; opacity:1; }
+  
+}
+@keyframes cycletwo {
+  0%  { left:600px; opacity:0; }
+  12.6% { left:600px; opacity:0; }
+  16.6% { left:0px; opacity:1; }               /*16,6*/
+  29.3% { left:0px; opacity:1; z-index:0; } 
+  33.3% { left:-600px; opacity:0; z-index:0; } /*33,3*/
+  34.3% { left:600px; opacity:0; z-index:-1; }  
+  100%{ left:600px; opacity:0; z-index:-1; }
+}
+@keyframes cyclethree {
+  0%  { left:600px; opacity:0; }
+  29.3% { left:600px; opacity:0; }
+  33.3% { left:0px; opacity:1; }               /*33,3*/
+  46% { left:0px; opacity:1; z-index:0; } 
+  50% { left:-600px; opacity:0; z-index:0; } /*50*/
+  51% { left:600px; opacity:0; z-index:-1; }
+  100%{ left:600px; opacity:0; z-index:-1; }
+}
+@keyframes cyclefour {
+  0%  { left:600px; opacity:0; }
+  46% { left:600px; opacity:0; }
+  50% { left:0px; opacity:1; }               /*50*/
+  62.6% { left:0px; opacity:1; z-index:0; }
+  66.6% { left:-600px; opacity:0; z-index:0; } /*66,6*/
+  81% { left:600px; opacity:0; z-index:-1; }
+  100%{ left:600px; opacity:0; z-index:-1; }
+}
+@keyframes cyclefive {
+  0%  { left:600px; opacity:0; }
+  62.6% { left:600px; opacity:0; }
+  66.6% { left:0px; opacity:1; }              /* 66,6*/
+  79.3% { left:0px; opacity:1; z-index:0; }
+  83.3% { left:-600px; opacity:0; z-index:0; } /*83,33*/
+  84.3% { left:600px; opacity:0; z-index:-1; }
+  100%{ left:600px; opacity:0; z-index:-1; }
+}
+@keyframes cyclesix {
+  0%  { left:600px; opacity:0; }
+  79.3% { left:600px; opacity:0; }
+  83.3% { left:0px; opacity:1; }
+  96% { left:0px; opacity:1; z-index:0; }
+  100%{ left:-600px; opacity:0; z-index:0; }
 }

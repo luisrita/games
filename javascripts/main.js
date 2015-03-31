@@ -125,3 +125,81 @@ function giveInfo(name, age) {
 
 getInfo(giveInfo);
 */
+
+// jQuery.fn.tabs = function(control) {
+// 	var element = $(this);
+// 	control = $(control);
+
+// 	element.delegate('li', 'click', function() {
+// 			element.find('li').removeClass('active');
+// 			$(this).addClass('active');
+
+// 			var tabName = $(this).attr('data-tab');
+// 			control.find('[data-tab]').removeClass('active');
+// 			control.find('[data-tab="' + tabName + '"]').addClass('active');
+// 	});
+
+// 	element.find('li:first').addClass('active');
+
+// 	return this;
+// };
+
+jQuery.fn.tabs = function(control) {
+	var element = $(this);
+	control = $(control);
+
+	element.delegate('li', 'click', function() {
+		// Sacar o nome da tab
+		var tabName = $(this).attr('data-tab');
+
+		// Disparar o custom event on tab click
+		element.trigger('change.tabs', tabName);
+	});
+
+	// Função que muda a class active da li no Evento
+	element.on('change.tabs', function(e, tabName) {
+		element.find('li').removeClass('active');
+		element.find('[data-tab="' + tabName + '"]').addClass('active');
+	});
+
+	// Função para alterar a visibilidade do conteudo das tabs
+	element.on('change.tabs', function(e, tabName) {
+		control.find('[data-tab]').removeClass('active');
+		control.find('[data-tab="' + tabName + '"]').addClass('active');
+	});
+
+	// Activar o primeiro elemento
+	var firstName = element.find('li:first').attr('data-tab');
+	element.trigger('change.tabs', firstName);
+
+	return this;
+};
+
+$("ul#tabs").tabs("#tabsContent");
+
+
+
+$('#clickme').on('click', function(e) {
+	e.preventDefault();
+	$.getJSON('file:///Users/luisrita/Documents/Projects/Exercicios/luisrita/javascripts/jsontest.json', function(data){
+		var items = [];
+
+		$.each(data, function(key, val) {
+			items.push('<li id="' + key + '">' + val + '</li>');
+		});
+
+		$('<ul/>', {
+			'class': 'test-list',
+			html: items.join('')
+		}).appendTo('.json-content');
+	});
+});
+
+
+
+
+
+
+
+
+

@@ -3,11 +3,10 @@
   <head>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <link href="stylesheets/stylesheet.css" rel="stylesheet" type="text/css" media="screen" />
+    <link href="stylesheets/pygment_trac.css" rel="stylesheet" type="text/css" media="screen" />
+    <link href="stylesheets/print.css" rel="stylesheet" type="text/css" media="print" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -17,6 +16,13 @@
 
   <body>
     <div id="container">
+      <ul class="navbar">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="exercices.html">Exercicios</a></li>
+        <li><a href="paralax.html">Paralax</a></li>
+        <li><a href="mvctests.html">Mvctests</a></li>
+        <li><a href="memory.html">Memoria</a></li>
+      </ul>
       <div class="inner">
         <script type="text/javascript">
         </script>
@@ -116,6 +122,36 @@
           </ul>
         </div>
 
+        <ul class="nth">
+          <li>1</li>
+        </ul>
+
+        <ul class="nth">
+          <li>1</li>
+          <li>2</li>
+        </ul>
+
+        <ul class="nth">
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+        </ul>
+
+        <ul class="nth">
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>
+        </ul>
+
+        <ul class="nth">
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>
+          <li>5</li>
+        </ul>
+
         <!--<div class="container">
           <input id="start" name="controls" type="radio">
           <input id="stop" name="controls" type="radio">
@@ -158,9 +194,23 @@
               <label for="reset">Reset</label>
             </div>
         </div> -->
+        <div class="tabs-container">
+          <ul id="tabs" class="tabs">
+            <li data-tab="users">Users</li> 
+            <li data-tab="groups">Groups</li>
+          </ul>
+          <div id="tabsContent" class="tabs-content">
+            <div data-tab="users"> Uesers Content </div>
+            <div data-tab="groups"> Groups Content </div> 
+          </div>
+        </div>
+
+        <a href="#" id="clickme">click me to get JSON</a>
+        <div class="json-content"></div>
+
+        <div class="star-anim"></div>
 
         <script src="javascripts/main.js" type="text/javascript"></script>
-        <script src="http://thecodeplayer.com/uploads/js/prefixfree.js" type="text/javascript"></script>
       </div>
     </div>
   </body>

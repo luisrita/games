@@ -516,12 +516,16 @@ input[name="controls"] {
 }
 
 .rotate {
+  -webkit-animation: rotate 1s steps(40, end) infinite, 
+             movehor 10s steps(500, end) infinite, 
+             scale steps(100, end), infinite;
   animation: rotate 1s steps(40, end) infinite, 
              movehor 10s steps(500, end) infinite, 
              scale steps(100, end), infinite;
 }
 
 .slide {
+  -webkit-animation: slide 20s cubic-bezier(1, 0, 0, 1) infinite;
   animation: slide 20s cubic-bezier(1, 0, 0, 1) infinite;
 }
 
@@ -562,6 +566,7 @@ input[name="controls"] {
   background-color: #666;
   font-size: 1.2em;
   border-bottom: 1px solid #f3f3f3;
+  z-index: 1;
 }
 
 .navbar li {
@@ -613,26 +618,32 @@ input[name="controls"] {
 }
 
 .image1 {
+  -webkit-animation: cycle 25s linear infinite;
   animation: cycle 25s linear infinite;
 }
 
 .image2 {
+  -webkit-animation: cycletwo 25s linear infinite;
   animation: cycletwo 25s linear infinite;
 }
 
 .image3 {
+  -webkit-animation: cyclethree 25s linear infinite;
   animation: cyclethree 25s linear infinite;
 }
 
 .image4 {
+  -webkit-animation: cyclefour 25s linear infinite;
   animation: cyclefour 25s linear infinite;
 }
 
 .image5 {
+  -webkit-animation: cyclefive 25s linear infinite;
   animation: cyclefive 25s linear infinite;
 }
 
 .image6 {
+  -webkit-animation: cyclesix 25s linear infinite;
   animation: cyclesix 25s linear infinite;
 }
 
@@ -690,3 +701,67 @@ input[name="controls"] {
   96% { left:0px; opacity:1; z-index:0; }
   100%{ left:-600px; opacity:0; z-index:0; }
 }
+
+
+/* :NTH-OF-M-CHILD TESTS */
+.nth {
+  list-style-type: none;
+  margin: 10px auto;
+
+}
+
+.nth li {
+  display: inline-block;
+  padding: 10px;
+  background-color: green;
+  margin: 0 10px;
+}
+
+.nth li:nth-child(2):nth-last-child(2) {
+  background-color: yellow;
+}
+
+.nth li:nth-child(1):nth-last-child(5), .nth li:nth-child(1):nth-last-child(5) ~ li {
+  background-color: yellow;
+}
+
+/* Tabs styles */
+.tabs-container {
+  max-width: 200px;
+  width: 100%;
+  margin: 30px auto;
+}
+
+.tabs li {
+  display: inline-block;
+  margin: 0 20px;
+}
+
+.tabs .active {
+  color: blue;
+}
+
+.tabs-content div {
+  display: none;
+}
+
+.tabs-content div.active {
+  display: block;
+}
+
+/* Star Animation */
+.star-anim {
+  width: 70px;
+  height: 50px;
+  background: url(../images/twitter_fave.png) no-repeat;
+  background-position: 0 0;
+  transition: background 2s steps(50);
+}
+
+.star-anim:hover {
+  background-position: -3519px 0;
+  transition: background 2s steps(55);
+}
+
+
+

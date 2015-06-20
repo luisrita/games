@@ -1,7 +1,3 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
 * {
 	margin: 0;
 	padding: 0;
@@ -9,38 +5,16 @@
 	font-size: 100%;
   box-sizing:border-box;
 }
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
 
-/* LAYOUT STYLES */
 body {
   font-size: 1em;
   font-family: 'Helvetica Neue', Helvetica, Arial, serif;
 }
 
+ol, ul {
+	list-style: none;
+}
 
-/* MISC */
 .clearfix:after {
   clear: both;
   content: '.';
@@ -49,11 +23,30 @@ body {
   height: 0;
 }
 
-.clearfix {display: inline-block;}
-* html .clearfix {height: 1%;}
-.clearfix {display: block;}
 
-//**
+/***************************************\
+                NAV MENU
+\***************************************/
+.navbar {
+  position: fixed;
+  width: 100%;
+  padding: 20px 50px;
+  text-align: center;
+  background-color: #666;
+  font-size: 1.2em;
+  border-bottom: 1px solid #f3f3f3;
+  z-index: 1;
+}
+
+.navbar li {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #f3f3f3;
+}
 
 
 /***************************************\
@@ -144,12 +137,11 @@ body {
 }
 
 
-
 /***************************************\
         CALCULATOR CSS EXPERIMENT
 \***************************************/
 /* Using box shadows to create 3D effects */
-#calculator {
+.calculator-wrapper {
   width: 325px;
   height: auto;
   margin: 100px auto;
@@ -262,9 +254,8 @@ body {
 }
 
 
-
 /***************************************\
-        Clock css Experiment
+        CLOCK CSS EXPERIMENT
 \***************************************/
 .timer {
   position: relative;
@@ -303,15 +294,13 @@ input[name="controls"] {
 #start:checked ~ .timer .numbers {
   animation-paly-state: running;
 }
+
 #stop:checked ~ .timer .numbers {
   animation-play-state: paused;
 }
+
 #reset:checked ~ .timer .numbers {
   animation: none;
-}
-
-.time_controls {
-  margin-top: -10px;
 }
 
 .time_controls label {

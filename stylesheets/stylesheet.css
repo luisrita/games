@@ -15,12 +15,59 @@ ol, ul {
 	list-style: none;
 }
 
+a {
+  text-decoration: none;
+}
+
 .clearfix:after {
   clear: both;
   content: '.';
   display: block;
   visibility: hidden;
   height: 0;
+}
+
+.container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding-top: 200px;
+}
+
+.tabs, .tabs-content {
+  display: inline-block;
+  vertical-align: top;
+  float: left;
+}
+
+.tabs {
+  width: 25%;
+}
+
+.tabs li {
+  margin: 0 20px;
+  line-height: 2em;
+}
+
+.tabs a {
+  color: #999;
+}
+
+.tabs .active a {
+  color: #000;
+}
+
+.tabs-content {
+  width: 75%;
+}
+
+.tab__item {
+  display: none;
+  text-align: center;
+}
+
+.tab__item.active {
+  display: block;
 }
 
 
@@ -53,9 +100,7 @@ ol, ul {
         BREADCRUMBS CSS EXPERIMENT
 \***************************************/
 .breadcrumb {
-  display: inline-block;
   box-shadow: 0 0 15px 1px rgba(0,0,0,0.35);
-  margin-top: 100px;
   overflow: hidden;
   border-radius: 5px;
   counter-reset: flag;
@@ -144,7 +189,7 @@ ol, ul {
 .calculator-wrapper {
   width: 325px;
   height: auto;
-  margin: 100px auto;
+  margin: 0 auto;
   padding: 20px 20px 9px;
   background: linear-gradient(#9dd2ea, #8bceec);
   border-radius: 3px;
@@ -492,29 +537,6 @@ input[name="controls"] {
   background-color: yellow;
 }
 
-/* Tabs styles */
-.tabs-container {
-  max-width: 200px;
-  width: 100%;
-  margin: 30px auto;
-}
-
-.tabs li {
-  display: inline-block;
-  margin: 0 20px;
-}
-
-.tabs .active {
-  color: blue;
-}
-
-.tabs-content div {
-  display: none;
-}
-
-.tabs-content div.active {
-  display: block;
-}
 
 
 

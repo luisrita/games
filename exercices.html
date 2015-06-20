@@ -15,102 +15,100 @@
   </head>
 
   <body>
-    <div id="container">
-      <ul class="navbar">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="exercices.html">Exercicios</a></li>
-        <li><a href="paralax.html">Paralax</a></li>
-        <li><a href="mvctests.html">Mvctests</a></li>
-        <li><a href="memory.html">Memoria</a></li>
-      </ul>
-      <div class="inner">
-        <script type="text/javascript">
-        </script>
+    <ul class="navbar">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="exercices.html">Exercicios</a></li>
+      <li><a href="paralax.html">Paralax</a></li>
+      <li><a href="mvctests.html">Mvctests</a></li>
+      <li><a href="memory.html">Memoria</a></li>
+    </ul>
+    <div class="container">
 
-        <section class="breadcrumb">
-          <a href="paralax.html" class="active">paralax</a>
-          <a href="#">menu</a>
-          <a href="#">menu</a>
-          <a href="#">menu</a>
-        </section>
+      <section class="breadcrumb">
+        <a href="paralax.html" class="active">paralax</a>
+        <a href="#">menu</a>
+        <a href="#">menu</a>
+        <a href="#">menu</a>
+      </section>
 
-        <div class="container">
-          <input id="start" name="controls" type="radio">
-          <input id="stop" name="controls" type="radio">
-          <input id="reset" name="controls" type="radio">
-          <div class="timer">
-            <div class="cell">
-              <div class="numbers tenhour moveten">0 1 2 3 4 5 6 7 8 9</div>
-            </div>
-            <div class="cell">
-              <div class="numbers hour moveten">0 1 2 3 4 5 6 7 8 9</div>
-            </div>
-            <div class="cell">
-              <div class="divider">:</div>
-            </div>
-            <div class="cell">
-              <div class="numbers tenminute movesix">0 1 2 3 4 5 6</div>
-            </div>
-            <div class="cell">
-              <div class="numbers minute moveten">0 1 2 3 4 5 6 7 8 9</div>
-            </div>
-            <div class="cell">
-              <div class="divider">:</div>
-            </div>
-            <div class="cell">
-              <div class="numbers tensecond movesix">0 1 2 3 4 5 6</div>
-            </div>
-            <div class="cell">
-              <div class="numbers second moveten">0 1 2 3 4 5 6 7 8 9</div>
-            </div>
-            <div class="cell">
-              <div class="divider">:</div>
-            </div>
-            <div class="cell">
-              <div class="numbers milisecond moveten">0 1 2 3 4 5 6 7 8 9</div>
-            </div>
-            <div class="cell">
-              <div class="numbers tenmilisecond moveten">0 1 2 3 4 5 6 7 8 9</div>
-            </div>
-            <div class="cell">
-              <div class="numbers hundredmilisecond moveten">0 1 2 3 4 5 6 7 8 9</div>
-            </div>
+      <section class="clock">
+        <input id="start" name="controls" type="radio">
+        <input id="stop" name="controls" type="radio">
+        <input id="reset" name="controls" type="radio">
+        <div class="timer">
+          <div class="cell">
+            <div class="numbers tenhour moveten">0 1 2 3 4 5 6 7 8 9</div>
           </div>
-          <div class="time_controls">
-            <label for="start">Start</label>
-            <label for="stop">Stop</label>
-            <label for="reset">Reset</label>
+          <div class="cell">
+            <div class="numbers hour moveten">0 1 2 3 4 5 6 7 8 9</div>
+          </div>
+          <div class="cell">
+            <div class="divider">:</div>
+          </div>
+          <div class="cell">
+            <div class="numbers tenminute movesix">0 1 2 3 4 5 6</div>
+          </div>
+          <div class="cell">
+            <div class="numbers minute moveten">0 1 2 3 4 5 6 7 8 9</div>
+          </div>
+          <div class="cell">
+            <div class="divider">:</div>
+          </div>
+          <div class="cell">
+            <div class="numbers tensecond movesix">0 1 2 3 4 5 6</div>
+          </div>
+          <div class="cell">
+            <div class="numbers second moveten">0 1 2 3 4 5 6 7 8 9</div>
+          </div>
+          <div class="cell">
+            <div class="divider">:</div>
+          </div>
+          <div class="cell">
+            <div class="numbers milisecond moveten">0 1 2 3 4 5 6 7 8 9</div>
+          </div>
+          <div class="cell">
+            <div class="numbers tenmilisecond moveten">0 1 2 3 4 5 6 7 8 9</div>
+          </div>
+          <div class="cell">
+            <div class="numbers hundredmilisecond moveten">0 1 2 3 4 5 6 7 8 9</div>
           </div>
         </div>
-
-        <div id="calculator">
-          <!-- Screen and clear key -->
-          <div class="top">
-            <span class="clear">C</span>
-            <div class="screen"></div>
-          </div>
-          
-          <div class="keys">
-            <!-- operators and other keys -->
-            <span>7</span>
-            <span>8</span>
-            <span>9</span>
-            <span class="operator">+</span>
-            <span>4</span>
-            <span>5</span>
-            <span>6</span>
-            <span class="operator">-</span>
-            <span>1</span>
-            <span>2</span>
-            <span>3</span>
-            <span class="operator">÷</span>
-            <span>0</span>
-            <span>.</span>
-            <span class="eval">=</span>
-            <span class="operator">x</span>
-          </div>
+        <div class="time_controls">
+          <label for="start">Start</label>
+          <label for="stop">Stop</label>
+          <label for="reset">Reset</label>
         </div>
+      </section>
 
+      <section class="calculator">
+        <!-- Screen and clear key -->
+        <div class="top">
+          <span class="clear">C</span>
+          <div class="screen"></div>
+        </div>
+        
+        <div class="keys">
+          <!-- operators and other keys -->
+          <span>7</span>
+          <span>8</span>
+          <span>9</span>
+          <span class="operator">+</span>
+          <span>4</span>
+          <span>5</span>
+          <span>6</span>
+          <span class="operator">-</span>
+          <span>1</span>
+          <span>2</span>
+          <span>3</span>
+          <span class="operator">÷</span>
+          <span>0</span>
+          <span>.</span>
+          <span class="eval">=</span>
+          <span class="operator">x</span>
+        </div>
+      </section>
+
+      <section class="animations">
         <div class="square rotate"></div>
 
         <div class="slider-frame">
@@ -121,7 +119,11 @@
             <li class="pic-four"></li>
           </ul>
         </div>
+        
+        <div class="star-anim"></div>
+      </section>
 
+      <section class="list-hack">
         <ul class="nth">
           <li>1</li>
         </ul>
@@ -151,49 +153,52 @@
           <li>4</li>
           <li>5</li>
         </ul>
+      </section>
 
-        <!--<div class="container">
-          <input id="start" name="controls" type="radio">
-          <input id="stop" name="controls" type="radio">
-          <input id="reset" name="controls" type="radio">
-          <div class="timer">
-            <div class="cell">
-              <div class="numbers tenhour moveten">0 1 2 3 4 5 6 7 8 9</div>
-            </div>
-            <div class="cell">
-              <div class="numbers hour moveten">0 1 2 3 4 5 6 7 8 9</div>
-            </div>
-            <div class="cell divider"><div class="numbers">:</div></div>
-            <div class="cell">
-              <div class="numbers tenminute movesix">0 1 2 3 4 5 6</div>
-            </div>
-            <div class="cell">
-              <div class="numbers minute moveten">0 1 2 3 4 5 6 7 8 9</div>
-            </div>
-            <div class="cell divider"><div class="numbers">:</div></div>
-            <div class="cell">
-              <div class="numbers tensecond movesix">0 1 2 3 4 5 6</div>
-            </div>
-            <div class="cell">
-              <div class="numbers second moveten">0 1 2 3 4 5 6 7 8 9</div>
-            </div>
-            <div class="cell divider"><div class="numbers">:</div></div>
-            <div class="cell">
-              <div class="numbers milisecond moveten">0 1 2 3 4 5 6 7 8 9</div>
-            </div>
-            <div class="cell">
-              <div class="numbers tenmilisecond moveten">0 1 2 3 4 5 6 7 8 9</div>
-            </div>
-            <div class="cell">
-              <div class="numbers hundredmilisecond moveten">0 1 2 3 4 5 6 7 8 9</div>
-            </div>
+      <!--<div class="container">
+        <input id="start" name="controls" type="radio">
+        <input id="stop" name="controls" type="radio">
+        <input id="reset" name="controls" type="radio">
+        <div class="timer">
+          <div class="cell">
+            <div class="numbers tenhour moveten">0 1 2 3 4 5 6 7 8 9</div>
           </div>
-            <div id="time_controls">
-              <label for="start">Start</label>
-              <label for="stop">Stop</label>
-              <label for="reset">Reset</label>
-            </div>
-        </div> -->
+          <div class="cell">
+            <div class="numbers hour moveten">0 1 2 3 4 5 6 7 8 9</div>
+          </div>
+          <div class="cell divider"><div class="numbers">:</div></div>
+          <div class="cell">
+            <div class="numbers tenminute movesix">0 1 2 3 4 5 6</div>
+          </div>
+          <div class="cell">
+            <div class="numbers minute moveten">0 1 2 3 4 5 6 7 8 9</div>
+          </div>
+          <div class="cell divider"><div class="numbers">:</div></div>
+          <div class="cell">
+            <div class="numbers tensecond movesix">0 1 2 3 4 5 6</div>
+          </div>
+          <div class="cell">
+            <div class="numbers second moveten">0 1 2 3 4 5 6 7 8 9</div>
+          </div>
+          <div class="cell divider"><div class="numbers">:</div></div>
+          <div class="cell">
+            <div class="numbers milisecond moveten">0 1 2 3 4 5 6 7 8 9</div>
+          </div>
+          <div class="cell">
+            <div class="numbers tenmilisecond moveten">0 1 2 3 4 5 6 7 8 9</div>
+          </div>
+          <div class="cell">
+            <div class="numbers hundredmilisecond moveten">0 1 2 3 4 5 6 7 8 9</div>
+          </div>
+        </div>
+          <div id="time_controls">
+            <label for="start">Start</label>
+            <label for="stop">Stop</label>
+            <label for="reset">Reset</label>
+          </div>
+      </div> -->
+
+      <section class="jquery-plugin">
         <div class="tabs-container">
           <ul id="tabs" class="tabs">
             <li data-tab="users">Users</li> 
@@ -204,14 +209,14 @@
             <div data-tab="groups"> Groups Content </div> 
           </div>
         </div>
+      </section>
 
+      <section class="json">
         <a href="#" id="clickme">click me to get JSON</a>
         <div class="json-content"></div>
+      </section>
 
-        <div class="star-anim"></div>
-
-        <script src="javascripts/main.js" type="text/javascript"></script>
-      </div>
+      <script src="javascripts/main.js" type="text/javascript"></script>
     </div>
   </body>
 </html>

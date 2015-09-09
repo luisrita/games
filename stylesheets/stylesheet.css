@@ -62,6 +62,7 @@ a {
 }
 
 .tab__item {
+  position: relative;
   display: none;
   text-align: center;
 }
@@ -536,6 +537,362 @@ input[name="controls"] {
 .nth li:nth-child(1):nth-last-child(5), .nth li:nth-child(1):nth-last-child(5) ~ li {
   background-color: yellow;
 }
+
+
+
+/***************************************\
+      CSS IMAGES BLEND MODE
+\***************************************/
+.blends img {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/*.img-two {
+  mix-blend-mode: overlay;
+}*/
+
+
+/***************************************\
+      CSS COUNTERS
+\***************************************/
+body {
+  counter-reset: pages;
+}
+
+.counter a {
+  counter-increment: pages
+}
+
+.counter a:before {
+  content: counter(pages, upper-roman);
+}
+
+.counter a {
+  float: left;
+  width: 32px;
+  margin: 8px;
+  padding: 8px;
+  border-radius: 4px;
+  border: solid 2px rgba(0, 0, 0, .4);
+  text-decoration: none;
+  text-align: center;
+  color: #000;
+  background-color: rgba(0, 0, 0, .2);
+  transition: all .1s;
+}
+
+.counter a:hover {
+  border: solid 2px #000;
+  background-color: rgba(0, 0, 0, .4);
+  box-shadow: 0 0 10px #000;
+}
+
+
+
+/***************************************\
+      CSS Filipa
+\***************************************/
+html, body {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+body {
+  overflow: hidden;
+}
+
+@keyframes textOne {
+  0% {
+    top: -220px;
+    left: 0;
+  }
+
+  20% {
+    top: 50px;
+    left: 0;
+  }
+
+  80% {
+    left: 0;
+  }
+
+  100% {
+    left: -800px;
+  }
+}
+
+@keyframes textThree {
+  0% {
+    top: -220px;
+    left: 0;
+  }
+
+  20% {
+    top: 90px;
+    left: 0;
+  }
+
+  80% {
+    left: 0;
+  }
+
+  100% {
+    left: -800px;
+  }
+}
+
+@keyframes textFour {
+  0% {
+    top: -220px;
+  }
+
+  90% {
+    top: -220px;
+  }
+
+  100% {
+    top: 20px;
+  }
+}
+
+@keyframes textFive {
+  0% {
+    bottom: -100px;
+  }
+
+  90% {
+    bottom: -100px;
+  }
+
+  100% {
+    bottom: 100px;
+  }
+}
+
+@keyframes botao {
+  0% {
+    bottom: -100px;
+  }
+
+  90% {
+    bottom: -100px;
+  }
+
+  100% {
+    bottom: 20px;
+  }
+}
+
+@keyframes imgOne {
+  0% {
+    left: 0px;
+  }
+
+  90% {;
+    left: 0px;
+  }
+
+  100% {
+    left: -600px;
+  }
+}
+
+@keyframes imgTwo {
+  0% {
+    left: 600px;
+  }
+
+  80% {
+    left: 400px;
+  }
+
+  100% {
+    left: 10%;
+  }
+}
+
+.intro {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  font-family: 'Indie Flower', cursive;
+}
+
+.img-one {
+  background: url('../images/fi_imgs/intro.jpg') no-repeat center 70%;
+  background-size: contain;
+  position: absolute;
+  left: -600px;
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+
+  -webkit-animation-name: imgOne;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in;
+  -webkit-animation-duration: 10s;
+
+  animation-name: imgOne;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-duration: 10s;
+}
+
+.img-two {
+  background: url('../images/fi_imgs/intro_1.jpg') no-repeat center 70%;
+  background-size: contain;
+  position: absolute;
+  top: 0;
+  left: 10%;
+  height: 88%;
+  width: 80%;
+  z-index: 0;
+
+  -webkit-animation-name: imgTwo;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in;
+  -webkit-animation-duration: 10.5s;
+
+  animation-name: imgTwo;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-duration: 10.5s;
+}
+
+.talk-one {
+  /*background: url('../images/fi_imgs/ballon_3.jpg') no-repeat;*/
+  position: absolute;
+  top: 50px;
+  left: -800px;
+  font-size: 50px;
+  text-align: center;
+
+  -webkit-animation-name: textOne;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in;
+  -webkit-animation-duration: 4s;
+
+  animation-name: textOne;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-duration: 4s;
+  z-index: 1;
+}
+
+.talk-two {
+  position: absolute;
+  top: 50px;
+  left: -800px;
+  font-size: 28px;
+  text-align: center;
+
+  -webkit-animation-name: textOne;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in;
+  -webkit-animation-duration: 8s;
+  -webkit-animation-delay: 2.5s;
+
+  animation-name: textOne;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-duration: 8s;
+  animation-delay: 2.5s;
+  z-index: 1;
+}
+
+.talk-three {
+  position: absolute;
+  top: 90px;
+  left: -800px;
+  font-size: 28px;
+  text-align: center;
+
+  -webkit-animation-name: textThree;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in;
+  -webkit-animation-duration: 6s;
+  -webkit-animation-delay: 4s;
+
+  animation-name: textThree;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-duration: 6s;
+  animation-delay: 4s;
+  z-index: 1;
+}
+
+.talk-four {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  font-size: 28px;
+  text-align: center;
+
+  -webkit-animation-name: textFour;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in;
+  -webkit-animation-duration: 11s;
+
+  animation-name: textFour;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-duration: 11s;
+  z-index: 1;
+}
+
+.talk-five {
+  position: absolute;
+  bottom: 100px;
+  left: 0;
+  width: 100%;
+  font-size: 20px;
+  text-align: center;
+
+  -webkit-animation-name: textFive;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in;
+  -webkit-animation-duration: 13s;
+
+  animation-name: textFive;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-duration: 13s;
+  z-index: 1;
+}
+
+.botao {
+  position: absolute;
+  left: 16%;
+  bottom: 20px;
+  padding: 10px 20px;
+  color: green;
+  border: 2px solid;
+  border-radius: 10px;
+  font-size: 22px;
+
+  -webkit-animation-name: botao;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in;
+  -webkit-animation-duration: 13s;
+
+  animation-name: botao;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-duration: 13s;
+  z-index: 1;
+}
+
+
+
+
+
+
+
+
 
 
 

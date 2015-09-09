@@ -605,7 +605,7 @@ body {
   overflow: hidden;
 }
 
-@keyframes textOne {
+@keyframes textOne, @-webkit-keyframes textOne {
   0% {
     top: -220px;
     left: 0;
@@ -625,7 +625,7 @@ body {
   }
 }
 
-@keyframes textThree {
+@keyframes textThree, @-webkit-keyframes textThree {
   0% {
     top: -220px;
     left: 0;
@@ -645,7 +645,7 @@ body {
   }
 }
 
-@keyframes textFour {
+@keyframes textFour, @-webkit-keyframes textFour {
   0% {
     top: -220px;
   }
@@ -659,7 +659,7 @@ body {
   }
 }
 
-@keyframes textFive {
+@keyframes textFive, @-webkit-keyframes textFive {
   0% {
     bottom: -100px;
   }
@@ -673,7 +673,7 @@ body {
   }
 }
 
-@keyframes botao {
+@keyframes botao, @-webkit-keyframes botao {
   0% {
     bottom: -100px;
   }
@@ -687,7 +687,7 @@ body {
   }
 }
 
-@keyframes imgOne {
+@keyframes imgOne, @-webkit-keyframes imgOne {
   0% {
     left: 0px;
   }
@@ -701,7 +701,7 @@ body {
   }
 }
 
-@keyframes imgTwo {
+@keyframes imgTwo, @-webkit-keyframes imgTwo {
   0% {
     left: 600px;
   }

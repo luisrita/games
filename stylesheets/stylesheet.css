@@ -723,7 +723,7 @@ body {
 }
 
 .img-one {
-  background: url('../images/fi_imgs/intro.jpg') no-repeat center bottom%;
+  background: url('../images/fi_imgs/intro.jpg') no-repeat center bottom;
   background-size: contain;
   position: absolute;
   left: -600px;

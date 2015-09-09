@@ -669,7 +669,7 @@ body {
   }
 
   100% {
-    bottom: 100px;
+    bottom: 80px;
   }
 }
 
@@ -723,7 +723,7 @@ body {
 }
 
 .img-one {
-  background: url('../images/fi_imgs/intro.jpg') no-repeat center 70%;
+  background: url('../images/fi_imgs/intro.jpg') no-repeat center bottom%;
   background-size: contain;
   position: absolute;
   left: -600px;
@@ -746,10 +746,10 @@ body {
   background: url('../images/fi_imgs/intro_1.jpg') no-repeat center 70%;
   background-size: contain;
   position: absolute;
-  top: 0;
-  left: 10%;
-  height: 88%;
-  width: 80%;
+  top: 10px;
+  left: 15%;
+  height: 85%;
+  width: 70%;
   z-index: 0;
 
   -webkit-animation-name: imgTwo;
@@ -829,7 +829,7 @@ body {
   position: absolute;
   top: 20px;
   left: 0;
-  font-size: 28px;
+  font-size: 22px;
   text-align: center;
 
   -webkit-animation-name: textFour;
@@ -846,7 +846,7 @@ body {
 
 .talk-five {
   position: absolute;
-  bottom: 100px;
+  bottom: 80px;
   left: 0;
   width: 100%;
   font-size: 20px;

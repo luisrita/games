@@ -720,7 +720,6 @@ body {
   height: 100%;
   width: 100%;
   font-family: 'Indie Flower', cursive;
-  display: none;
 }
 
 .img-one {
@@ -921,6 +920,7 @@ body {
 }
 
 .quiz {
+  display: none;
   font-family: 'Alegreya', serif;
 }
 
@@ -931,7 +931,7 @@ body {
 }
 
 .img-three {
-  background: url('../images/fi_imgs/gumball_1.jpg') no-repeat center 80%;
+  background: url('../images/fi_imgs/gumball_1.jpg') no-repeat center 90%;
   background-size: 70%;
   position: absolute;
   left: -600px;
@@ -1038,7 +1038,7 @@ body {
 
 .botao-quiz {
   display: table;
-  margin: 20px auto 0;
+  margin: 10px auto 0;
   opacity: 0
 }
 

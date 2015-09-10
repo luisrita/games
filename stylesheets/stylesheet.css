@@ -1112,14 +1112,22 @@ body {
 
 .step-five {
   background-image: url('../images/fi_imgs/zoo.jpg'), url('../images/fi_imgs/gumball_3.jpg');
-  background-position: center 40%, center bottom;
-  background-size: 90%;
+  background-position: center 45%, center bottom;
+  background-size: 70%, 90%;
   background-repeat: no-repeat;
   position: absolute;
   height: 100%;
-  padding-top: 20px;
+  padding-top: 30px;
   text-align: center;
   font-size: 25px;
+}
+
+.step-five p {
+  padding: 0 10px;
+}
+
+.step-five .text-big {
+  font-size: 48px;
 }
 
 

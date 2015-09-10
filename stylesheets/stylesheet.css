@@ -612,7 +612,7 @@ body {
   }
 
   20% {
-    top: 50px;
+    top: 40px;
     left: 0;
   }
 
@@ -632,7 +632,7 @@ body {
   }
 
   20% {
-    top: 90px;
+    top: 80px;
     left: 0;
   }
 
@@ -720,6 +720,7 @@ body {
   height: 100%;
   width: 100%;
   font-family: 'Indie Flower', cursive;
+  display: none;
 }
 
 .img-one {
@@ -764,7 +765,6 @@ body {
 }
 
 .talk-one {
-  /*background: url('../images/fi_imgs/ballon_3.jpg') no-repeat;*/
   position: absolute;
   top: 40px;
   left: -800px;
@@ -865,14 +865,17 @@ body {
 }
 
 .botao {
-  position: absolute;
-  left: 16%;
-  bottom: 20px;
   padding: 10px 20px;
   color: green;
   border: 2px solid;
   border-radius: 10px;
   font-size: 22px;
+}
+
+.botao-anim {
+  position: absolute;
+  left: 16%;
+  bottom: 20px;
 
   -webkit-animation-name: botao;
   -webkit-animation-iteration-count: 1;
@@ -889,6 +892,235 @@ body {
 
 
 
+@-webkit-keyframes imgThree {
+  0% {
+    left: 0;
+  }
+
+  90% {
+    left: 0
+  }
+
+  100% {
+    left: -600px;
+  }
+}
+
+@-webkit-keyframes imgFour {
+  0% {
+    left: 400px;
+  }
+
+  80% {
+    left: 400px;
+  }
+
+  100% {
+    left: 0;
+  }
+}
+
+.quiz {
+  font-family: 'Alegreya', serif;
+}
+
+.step-one {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.img-three {
+  background: url('../images/fi_imgs/gumball_1.jpg') no-repeat center 80%;
+  background-size: 70%;
+  position: absolute;
+  left: -600px;
+  height: 100%;
+  width: 100%;
+
+  -webkit-animation-name: imgThree;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in;
+  -webkit-animation-duration: 3.5s;
+
+  animation-name: imgThree;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-duration: 3.5s;
+  z-index: 1;
+}
+
+.img-four {
+  background: url('../images/fi_imgs/gumball_2.jpg') no-repeat center 80%;
+  background-size: contain;
+  position: absolute;
+  left: 0;
+  height: 100%;
+  width: 100%;
+
+  -webkit-animation-name: imgFour;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in;
+  -webkit-animation-duration: 4.5s;
+
+  animation-name: imgFour;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-duration: 4.5s;
+  z-index: 1;
+}
+
+.text-one {
+  position: absolute;
+  top: 40px;
+  left: -800px;
+  font-size: 44px;
+  text-align: center;
+
+  -webkit-animation-name: textOne;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in;
+  -webkit-animation-duration: 4s;
+
+  animation-name: textOne;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-duration: 4s;
+  z-index: 1;
+}
+
+.text-two {
+  position: absolute;
+  top: 40px;
+  left: -800px;
+  width: 100%;
+  font-size: 28px;
+  text-align: center;
+
+  -webkit-animation-name: textOne;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in;
+  -webkit-animation-duration: 8s;
+  -webkit-animation-delay: 3s;
+
+  animation-name: textOne;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-duration: 8s;
+  animation-delay: 3s;
+  z-index: 1;
+}
+
+.text-three {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  width: 100%;
+  font-size: 22px;
+  text-align: center;
+
+  -webkit-animation-name: textFour;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in;
+  -webkit-animation-duration: 11s;
+
+  animation-name: textFour;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-duration: 11s;
+  z-index: 1;
+}
+
+.botao-start {
+  display: inline-block;
+  margin-top: 20px;
+}
+
+.botao-quiz {
+  display: table;
+  margin: 20px auto 0;
+  opacity: 0
+}
+
+.step-two, .step-three, .step-four, .step-five {
+  display: none;
+}
+
+.anima-img {
+  width: 300px;
+  height: 200px;
+  margin: 0 auto;
+  background-size: cover;
+}
+
+.anima-img--lion {
+  background-image: url('../images/fi_imgs/lion.jpg');
+}
+
+.anima-img--ping {
+  background-image: url('../images/fi_imgs/pinguim.jpg');
+}
+
+.anima-img--elephant {
+  background-image: url('../images/fi_imgs/elephant.jpg');
+}
+
+.question {
+  font-size: 24px;
+  padding: 0 10px;
+}
+
+.ans {
+  padding: 20px 10px 0;
+  font-size: 20px;
+}
+
+.ans a {
+  color: #9D9C9C;
+  line-height: 2.5em;
+}
+
+.box-correct {
+  background: url('../images/fi_imgs/correct.jpg') no-repeat center bottom;
+  padding-top: 20px;
+  color: forestgreen;
+}
+
+.box-wrong {
+  background: url('../images/fi_imgs/wrong.jpg') no-repeat center bottom;
+  padding-top: 10px;
+  color: coral;
+}
+
+.box {
+  background-size: contain;
+  background-color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: none;
+  width: 300px;
+  height: 230px;
+  -webkit-transform: translate3d(-50%, -50%, 0);
+  transform: translate3d(-50%, -50%, 0);
+  z-index: 2;
+  box-shadow: 0px 0px 90px #333;
+  font-size: 40px;
+  text-align: center;
+  font-family: 'Alegreya', serif;
+}
+
+.step-five {
+  background-image: url('../images/fi_imgs/zoo.jpg'), url('../images/fi_imgs/gumball_3.jpg');
+  background-position: center 40%, center bottom;
+  background-size: 90%;
+  background-repeat: no-repeat;
+  position: absolute;
+  height: 100%;
+  padding-top: 20px;
+  text-align: center;
+  font-size: 25px;
+}
 
 
 

@@ -5,10 +5,10 @@
 		<title>Parabéns Filipa</title>
 	  <meta http-equiv="X-UA-Compatible" content="chrome=1">
 	  <meta name="viewport" content="width=device-width, initial-scale=1">
-	  <link href='https://fonts.googleapis.com/css?family=Noto+Serif' rel='stylesheet' type='text/css'>
-	  <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
 	  <link href='https://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
+	  <link href='https://fonts.googleapis.com/css?family=Alegreya' rel='stylesheet' type='text/css'>
 	  <link href="stylesheets/stylesheet.css" rel="stylesheet" type="text/css" media="screen" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script> 
 	</head>
 	<body>
 		<div class="intro">
@@ -18,8 +18,71 @@
 			<div class="img-one"></div>
 			<p class="talk-four">Encontra o Urso do Sporting para começares a tua aventura. Ele tem a primeira parte do mapa.</p>
 			<p class="talk-five">Quando chegares ao fim clica aqui</p>
-			<a href="#" class="js-change botao">Aventura seguinte</a>
+			<a href="#" class="js-change botao botao-anim">Aventura seguinte</a>
 			<div class="img-two"></div>
 		</div>
+
+		<div class="quiz">
+			<div class="step-one">
+				<div class="img-three"></div>
+				<p class="text-one">Feliz Aniversário miuda!!</p>
+				<div class="img-four"></div>
+				<p class="text-two">Olha, temos uma prenda para ti, mas primeiro vais ter que passar no nosso teste...</p>
+				<p class="text-three">Pronta pra começar? <br> Clica aqui: <br><a href="#" class="js-start botao botao-start">Começar</a></p>
+			</div>
+
+			<div class="step-two">
+				<div class="anima-img anima-img--lion"></div>
+				<h2 class="question">Quantos anos vivem em média os Leões na natureza?</h2>
+				<div class="js-ans ans">
+					<p><a href="#" class="js-correct">> 10-14 anos</a></p>
+					<p><a href="#">> 16-20 anos</a></p>
+					<p><a href="#">> 13-17 anos</a></p>
+				</div>
+				<a href="#" class="js-next-2 botao botao-quiz">Próxima</a>
+			</div>
+
+			<div class="step-three">
+				<div class="anima-img anima-img--ping"></div>
+				<h2 class="question">Qual a velocidade máxima de um pinguim a nadar?</h2>
+				<div class="js-ans ans">
+					<p><a href="#">> 30km/h</a></p>
+					<p><a href="#">> 50km/h</a></p>
+					<p><a href="#" class="js-correct">> 45km/h</a></p>
+				</div>
+				<a href="#" class="js-next-3 botao botao-quiz">Próxima</a>
+			</div>
+
+			<div class="step-four">
+				<div class="anima-img anima-img--elephant"></div>
+				<h2 class="question">Em média, quanto pesa um elefante?</h2>
+				<div class="js-ans ans">
+					<p><a href="#" class="js-correct ans-1">> entre 4 a 6 toneladas</a></p>
+					<p><a href="#">> entre 1 a 2 toneladas</a></p>
+					<p><a href="#">> 3 toneladas</a></p>
+				</div>
+				<a href="#" class="js-next-4 botao botao-quiz">Próxima</a>
+			</div>
+
+			<div class="step-five">
+				<p>Acabaste de ganhar uma visita ao <a href="http://www.zoo.pt/site/index.php">Jardim zoológico!</a></p>
+				<p>Diverte-te!</p>
+			</div>
+		</div>
+
+		<div class="js-box-correct box box-correct">
+			<p>Está certo!</p>
+		</div>
+
+		<div class="js-box-wrong box box-wrong">
+			<p>Está errado!</p>
+		</div>
+
+		<!--
+			Leões vivem por volta de 10-14 anos na natureza
+			Chega a nadar com uma velocidade de até 45 km/h
+			Os elefantes são os maiores animais terrestres da actualidade pesando em média entre 4 a 6 toneladas e medindo em média quatro metros de altura-->
+
+    <script src="javascripts/filipa.js" type="text/javascript"></script>
 	</body>
 </html>

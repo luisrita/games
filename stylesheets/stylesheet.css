@@ -1112,8 +1112,8 @@ body {
 
 .step-five {
   background-image: url('../images/fi_imgs/zoo.jpg'), url('../images/fi_imgs/gumball_3.jpg');
-  background-position: center 45%, center bottom;
-  background-size: 70%, 90%;
+  background-position: center 42%, center bottom;
+  background-size: 55%, 90%;
   background-repeat: no-repeat;
   position: absolute;
   height: 100%;

@@ -9,14 +9,18 @@ function generateRandomNumber() {
   numberField.innerHTML = randNumber;
 }
 
-function hideNumber() {
+function hideNumber(time) {
   setTimeout(function(){
-    var numberField = document.getElementsByClassName('js-randNumber')[0],
+    var numberField = document.getElementsByClassName('numbers-container__number')[0],
         playerInput = document.getElementById('player-input');
 
     numberField.className += " hide";
     playerInput.className += " active";
-  }, 5000)
+
+
+  }, time)
+  
+  $('.progress-bar span').animate({width: "100%"}, time, "linear");
 }
 
 function startGame() {
@@ -25,7 +29,9 @@ function startGame() {
       $('.numbers-container').fadeIn();
     });
 
+    time = 5000;
+
     generateRandomNumber();
-    hideNumber();
+    hideNumber(time);
   });
 }

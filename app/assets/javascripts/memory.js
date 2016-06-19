@@ -2,15 +2,28 @@ $(document).ready( function(){
   startGame();
 });
 
-var randNumber, rightAnswer, maxSteps = 10, currentStep;
+var randNumber, rightAnswer, maxSteps = 2, currentStep, level = 1, digits;
 
 function generateRandomNumber() {
   var numberField = document.getElementsByClassName('js-randNumber')[0];
-  randNumber = Math.floor(Math.random()*90000) + 10000;
+
+  numOfDigits = level + 3;
+  calculateDigits(numOfDigits);
+  var multiplyer = parseInt(9 + digits);
+
+  randNumber = Math.floor(Math.random()*multiplyer) + 10000;
 
   numberField.innerHTML = randNumber;
+}
 
-  return randNumber;
+function calculateDigits(number) {
+  var arrayOfDigits = [];
+
+  for (var i = number; i >= 1; i--) {
+    arrayOfDigits.push(0);
+  }
+
+  digits = arrayOfDigits.join('');
 }
 
 function hideNumber(time) {
@@ -21,6 +34,7 @@ function hideNumber(time) {
     numberField.className += " hide";
     playerInput.className += " active";
 
+    document.getElementById('player-input').focus();
   }, time)
   
   $('.progress-bar span').animate(
@@ -65,7 +79,7 @@ function comparePlayerInput() {
   } else {
     console.log('aids');
 
-    wrongAnswer++;
+    //wrongAnswer++;
   }
 
   setTimeout(gameProgression, 2000);
@@ -83,7 +97,7 @@ function resetNumber() {
 function gameProgression() {
   var time = 5000;
 
-  if (currentStep < maxSteps) {
+  if (currentStep <= maxSteps) {
     if(currentStep > 1) {
       resetNumber();
     }
@@ -92,6 +106,34 @@ function gameProgression() {
     hideNumber(time);
     checkNumbersMatch();
   } else {
-    console.log('You got ' + rightAnswer + ' in ' + maxSteps);
+    var gameDivider = document.getElementsByClassName('game-divider')[0],
+        gameWrapper = document.getElementsByClassName('game-wrapper')[0],
+        resultsField = document.getElementsByClassName('js-result')[0],
+        nextLevelBtn = document.getElementsByClassName('js-next-level')[0];
+
+    gameWrapper.className += ' hide';
+    gameDivider.className += ' active';   
+    resultsField.innerHTML = 'Acertaste ' + rightAnswer + ' em ' + maxSteps;
+
+    nextLevelBtn.addEventListener('click', advanceLevel);
+
+    level++;
   }
+}
+
+function startLevel() {
+  rightAnswer = 0;
+  currentStep = 1;
+  resetNumber();
+  gameProgression();
+}
+
+function advanceLevel() {
+  var gameDivider = document.getElementsByClassName('game-divider')[0],
+      gameWrapper = document.getElementsByClassName('game-wrapper')[0];
+
+  gameWrapper.className = 'game-wrapper';
+  gameDivider.className = 'game-divider';
+
+  startLevel();
 }

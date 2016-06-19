@@ -1,15 +1,8 @@
-<ul class="navbar">
-</ul>
 <div class="container">
-  <h1>Numbers Memory Game</h1>
-  <div class="game-wrapper">
-    <a href="#" class="js-start btn">Start Game</a>
-    <div class="numbers-container">
-      <p class="numbers">989849286</p>
-      <form>
-        <input type="text" name="player-number"  autofocus>
-        <input type="submit" value="Submeter" class="btn">
-      </form>
-    </div>
-  </div>
+  <h1>Games</h1>
+  <ul>
+    <li><%= link_to 'Numbers Memory', memory_path %></li>
+    <li><%= link_to 'Calculus', calc_path %></li>
+    <li><%= link_to 'Hidden puzzle', puzzle_path %></li>
+  </ul>
 </div>

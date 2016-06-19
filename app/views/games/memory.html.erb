@@ -1,15 +1,16 @@
-<ul class="navbar">
-</ul>
 <div class="container">
-  <h1>Numbers Memory Game</h1>
+  <h1 class="title">Numbers Memory Game</h1>
   <div class="game-wrapper">
     <a href="#" class="js-start btn">Start Game</a>
     <div class="numbers-container">
-      <p class="numbers">989849286</p>
-      <form>
-        <input type="text" name="player-number"  autofocus>
-        <input type="submit" value="Submeter" class="btn">
-      </form>
+      <div class="numbers-container__number">
+        <p class="js-randNumber"></p>
+        <div class="progress-bar"><span></span></div>
+      </div>
+      <div id="player-input" class="numbers-container__input">
+        <input type="text" name="player-number" autofocus>
+        <a href="#" class="btn">Submeter</a>
+      </div>
     </div>
   </div>
 </div>

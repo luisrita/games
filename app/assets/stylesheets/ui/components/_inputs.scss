@@ -1,0 +1,11 @@
+/*------------------------------------*\
+    #INPUTS
+\*------------------------------------*/
+input[type="text"] {
+  font-size: 36px;
+  border: none;
+}
+
+input[type="text"]:focus {
+  outline: 0;
+}

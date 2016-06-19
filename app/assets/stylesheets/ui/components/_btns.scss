@@ -1,0 +1,20 @@
+/*------------------------------------*\
+    #BUTTONS
+\*------------------------------------*/
+$btn-color: #add8e6;
+$btn-border: darken( $btn-color, 10% );
+
+.btn {
+  border: none;
+  display: table;
+  padding: 15px 20px 10px;
+  background-color: $btn-color;
+  margin: 70px auto 0;
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-radius: 4px;
+  border-bottom: 2px solid $btn-border;
+  font-size: 20px;
+}

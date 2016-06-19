@@ -69,18 +69,24 @@ function checkNumbersMatch() {
 }
 
 function comparePlayerInput() {
-  var inputVal = parseInt(document.getElementById('player-input').value, 10);
+  var inputVal = parseInt(document.getElementById('player-input').value, 10),
+      feedbackField = document.getElementsByClassName('js-feedback')[0],
+      feedbackModal = document.getElementById('feedback-modal');
 
   if(randNumber === inputVal) {
-    console.log('success!');
 
+    feedbackField.innerHTML = "Correcto!"
     rightAnswer++;
 
   } else {
-    console.log('aids');
 
-    //wrongAnswer++;
+    feedbackField.innerHTML = "Errado! A resposta correcta era: " + randNumber;
+
   }
+
+  feedbackModal.className += (randNumber === inputVal) ? ' feedback-modal--correct active' : ' feedback-modal--wrong active';
+
+  setTimeout(function() {feedbackModal.className = 'feedback-modal';}, 2000);
 
   setTimeout(gameProgression, 2000);
 }

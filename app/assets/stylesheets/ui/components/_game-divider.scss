@@ -8,4 +8,13 @@
   &.active {
     display: block;
   }
+
+  p {
+    font-size: 24px;
+    font-weight: 700;
+
+    span {
+      font-weight: 300;
+    }
+  }
 }

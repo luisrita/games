@@ -1,0 +1,11 @@
+/*------------------------------------*\
+    #GAME DIVIDER
+\*------------------------------------*/
+.game-divider {
+  display: none;
+  text-align: center;
+
+  &.active {
+    display: block;
+  }
+}

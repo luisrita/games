@@ -1,0 +1,18 @@
+/*------------------------------------*\
+    #PROGRESS BAR
+\*------------------------------------*/
+.progress-bar {
+  position: relative;
+  width: 300px;
+  height: 25px;
+  border: 1px solid #ccc;
+  margin: 80px auto 0;
+
+  span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: green;
+  }
+}

@@ -38,6 +38,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 /*------------------------------------*\
     #SETTINGS
 \*------------------------------------*/
+@import 'ui/settings/colors';
 
 
 /*------------------------------------*\
@@ -54,7 +55,6 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
     #BASE
 \*------------------------------------*/
 @import 'ui/base/page';
-@import 'ui/settings/colors';
 
 
 /*------------------------------------*\
@@ -70,6 +70,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 @import 'ui/components/inputs';
 @import 'ui/components/numbers-input';
 @import 'ui/components/title';
+@import 'ui/components/progress-bar';
 
 
 /*------------------------------------*\

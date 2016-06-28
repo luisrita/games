@@ -4,6 +4,20 @@ $(document).ready( function(){
 
 var randNumber, rightAnswer, maxSteps = 2, currentStep, level = 1, digits;
 
+
+// Calculate the number of digits according to the level
+function calculateDigits(number) {
+  var arrayOfDigits = [];
+
+  for (var i = number; i >= 1; i--) {
+    arrayOfDigits.push(0);
+  }
+
+  digits = arrayOfDigits.join('');
+}
+
+
+// Generate the number
 function generateRandomNumber() {
   var numberField = document.getElementsByClassName('js-randNumber')[0];
 
@@ -16,16 +30,8 @@ function generateRandomNumber() {
   numberField.innerHTML = randNumber;
 }
 
-function calculateDigits(number) {
-  var arrayOfDigits = [];
 
-  for (var i = number; i >= 1; i--) {
-    arrayOfDigits.push(0);
-  }
-
-  digits = arrayOfDigits.join('');
-}
-
+// Show the number during the determined seconds
 function hideNumber(time) {
   setTimeout(function(){
     var numberField = document.getElementsByClassName('numbers-container__number')[0],
@@ -47,8 +53,12 @@ function hideNumber(time) {
   );
 }
 
+
+// Start the game on start btn click, 
+// reset answers and steps variables and call gameProgression function
 function startGame() {
-  $('.js-start').on('click', function(){
+  $('.js-start').on('click', function(e) {
+    e.preventDefault();
     $(this).fadeOut(function(){
       $('.numbers-container').fadeIn();
     });
@@ -60,15 +70,19 @@ function startGame() {
   });
 }
 
-function checkNumbersMatch() {
+
+// Create event listner to call checkNumbersMatch function
+function comparePlayerInput() {
   var submit = document.getElementsByClassName('js-submit-number')[0];
 
-  submit.addEventListener('click', comparePlayerInput);
+  submit.addEventListener('click', checkNumbersMatch);
 
   currentStep++;
 }
 
-function comparePlayerInput() {
+
+// Check if the user and random numbers are equal
+function checkNumbersMatch() {
   var inputVal = parseInt(document.getElementById('player-input').value, 10),
       feedbackField = document.getElementsByClassName('js-feedback')[0],
       feedbackModal = document.getElementById('feedback-modal');
@@ -91,6 +105,9 @@ function comparePlayerInput() {
   setTimeout(gameProgression, 2000);
 }
 
+
+// Reset and hide the user input field and show 
+// the generated number field again
 function resetNumber() {
   document.getElementById('player-input').value = "";
   var numberField = document.getElementsByClassName('numbers-container__number')[0],
@@ -100,6 +117,9 @@ function resetNumber() {
   playerInput.className = "numbers-container__input";
 }
 
+
+// Check to see which step we're in and call the 
+// game mechanics functions untill we reach the last step
 function gameProgression() {
   var time = 5000;
 
@@ -110,7 +130,7 @@ function gameProgression() {
 
     generateRandomNumber();
     hideNumber(time);
-    checkNumbersMatch();
+    comparePlayerInput();
   } else {
     var gameDivider = document.getElementsByClassName('game-divider')[0],
         gameWrapper = document.getElementsByClassName('game-wrapper')[0],
@@ -127,6 +147,9 @@ function gameProgression() {
   }
 }
 
+
+// Start a new level by reseting the answers and steps variables, 
+// call the reset number and game progression functions
 function startLevel() {
   rightAnswer = 0;
   currentStep = 1;
@@ -134,6 +157,8 @@ function startLevel() {
   gameProgression();
 }
 
+
+// Hide feedback modal and call the start level function
 function advanceLevel() {
   var gameDivider = document.getElementsByClassName('game-divider')[0],
       gameWrapper = document.getElementsByClassName('game-wrapper')[0];

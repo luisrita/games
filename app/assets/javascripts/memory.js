@@ -28,6 +28,7 @@ function gameProgression() {
   var time = 5000;
 
   if (currentStep <= maxSteps) {
+
     if(currentStep > 1) {
       resetNumber();
     }
@@ -35,19 +36,37 @@ function gameProgression() {
     generateRandomNumber();
     hideNumber(time);
     comparePlayerInput();
+
   } else {
+
     var gameDivider = document.getElementsByClassName('game-divider')[0],
         gameWrapper = document.getElementsByClassName('game-wrapper')[0],
         resultsField = document.getElementsByClassName('js-result')[0],
-        nextLevelBtn = document.getElementsByClassName('js-next-level')[0];
+        nextLevelBtn = document.getElementsByClassName('js-next-level')[0],
+        repeatLevelBtn = document.getElementsByClassName('js-repeat-level')[0];
 
     gameWrapper.className += ' hide';
     gameDivider.className += ' active';   
     resultsField.innerHTML = 'Acertaste ' + rightAnswer + ' em ' + maxSteps;
 
-    nextLevelBtn.addEventListener('click', advanceLevel);
+    checkPlayerPerformance(rightAnswer, maxSteps);
 
+    nextLevelBtn.addEventListener('click', advanceLevel);
+    repeatLevelBtn.addEventListener('click', advanceLevel);
+
+  }
+}
+
+function checkPlayerPerformance(rightAnswers, steps) {
+  var finalResult = rightAnswers/steps;
+
+  if(finalResult >= 0.75) {
+
+    document.getElementById('game-win').className += ' active';
     level++;
+
+  } else {
+    document.getElementById('game-lose').className += ' active';
   }
 }
 
@@ -129,9 +148,7 @@ function checkNumbersMatch() {
   }
 
   feedbackModal.className += (randNumber === inputVal) ? ' feedback-modal--correct active' : ' feedback-modal--wrong active';
-
   setTimeout(function() {feedbackModal.className = 'feedback-modal';}, 2000);
-
   setTimeout(gameProgression, 2000);
 }
 
@@ -139,10 +156,12 @@ function checkNumbersMatch() {
 // Hide feedback modal and call the start level function
 function advanceLevel() {
   var gameDivider = document.getElementsByClassName('game-divider')[0],
-      gameWrapper = document.getElementsByClassName('game-wrapper')[0];
+      gameWrapper = document.getElementsByClassName('game-wrapper')[0],
+      optionsControls = document.getElementsByClassName('game-divider__actions');
 
   gameWrapper.className = 'game-wrapper';
   gameDivider.className = 'game-divider';
+  optionsControls.className = 'game-divider__actions';
 
   startLevel();
 }

@@ -16,7 +16,16 @@
 
   <div class="game-divider">
     <p>Resultado: <span class="js-result"></span></p>
-    <a href="#" class="js-next-level btn">Próximo Nível</a>
+
+    <div id="game-win" class="game-divider__actions">
+      <a href="#" class="js-next-level btn">Próximo Nível</a>
+      <%= link_to 'Voltar', memory_path, :class => 'btn' %>
+    </div>
+
+    <div id="game-lose" class="game-divider__actions">
+      <a href="#" class="js-repeat-level btn">Repetir</a>
+      <%= link_to 'Voltar', memory_path, :class => 'btn' %>
+    </div>
   </div>
 
   <div id="feedback-modal" class="feedback-modal">

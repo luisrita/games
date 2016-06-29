@@ -5,6 +5,53 @@ $(document).ready( function(){
 var randNumber, rightAnswer, maxSteps = 2, currentStep, level = 1, digits;
 
 
+// Start the game on start btn click, 
+// reset answers and steps variables and call gameProgression function
+function startGame() {
+  $('.js-start').on('click', function(e) {
+    e.preventDefault();
+    $(this).fadeOut(function(){
+      $('.numbers-container').fadeIn();
+    });
+
+    rightAnswer = 0
+    currentStep = 1;
+
+    gameProgression();
+  });
+}
+
+
+// Check to see which step we're in and call the 
+// game mechanics functions untill we reach the last step
+function gameProgression() {
+  var time = 5000;
+
+  if (currentStep <= maxSteps) {
+    if(currentStep > 1) {
+      resetNumber();
+    }
+
+    generateRandomNumber();
+    hideNumber(time);
+    comparePlayerInput();
+  } else {
+    var gameDivider = document.getElementsByClassName('game-divider')[0],
+        gameWrapper = document.getElementsByClassName('game-wrapper')[0],
+        resultsField = document.getElementsByClassName('js-result')[0],
+        nextLevelBtn = document.getElementsByClassName('js-next-level')[0];
+
+    gameWrapper.className += ' hide';
+    gameDivider.className += ' active';   
+    resultsField.innerHTML = 'Acertaste ' + rightAnswer + ' em ' + maxSteps;
+
+    nextLevelBtn.addEventListener('click', advanceLevel);
+
+    level++;
+  }
+}
+
+
 // Calculate the number of digits according to the level
 function calculateDigits(number) {
   var arrayOfDigits = [];
@@ -54,23 +101,6 @@ function hideNumber(time) {
 }
 
 
-// Start the game on start btn click, 
-// reset answers and steps variables and call gameProgression function
-function startGame() {
-  $('.js-start').on('click', function(e) {
-    e.preventDefault();
-    $(this).fadeOut(function(){
-      $('.numbers-container').fadeIn();
-    });
-
-    rightAnswer = 0
-    currentStep = 1;
-
-    gameProgression();
-  });
-}
-
-
 // Create event listner to call checkNumbersMatch function
 function comparePlayerInput() {
   var submit = document.getElementsByClassName('js-submit-number')[0];
@@ -106,45 +136,15 @@ function checkNumbersMatch() {
 }
 
 
-// Reset and hide the user input field and show 
-// the generated number field again
-function resetNumber() {
-  document.getElementById('player-input').value = "";
-  var numberField = document.getElementsByClassName('numbers-container__number')[0],
-      playerInput = document.getElementsByClassName('numbers-container__input')[0];
+// Hide feedback modal and call the start level function
+function advanceLevel() {
+  var gameDivider = document.getElementsByClassName('game-divider')[0],
+      gameWrapper = document.getElementsByClassName('game-wrapper')[0];
 
-  numberField.className = "numbers-container__number";
-  playerInput.className = "numbers-container__input";
-}
+  gameWrapper.className = 'game-wrapper';
+  gameDivider.className = 'game-divider';
 
-
-// Check to see which step we're in and call the 
-// game mechanics functions untill we reach the last step
-function gameProgression() {
-  var time = 5000;
-
-  if (currentStep <= maxSteps) {
-    if(currentStep > 1) {
-      resetNumber();
-    }
-
-    generateRandomNumber();
-    hideNumber(time);
-    comparePlayerInput();
-  } else {
-    var gameDivider = document.getElementsByClassName('game-divider')[0],
-        gameWrapper = document.getElementsByClassName('game-wrapper')[0],
-        resultsField = document.getElementsByClassName('js-result')[0],
-        nextLevelBtn = document.getElementsByClassName('js-next-level')[0];
-
-    gameWrapper.className += ' hide';
-    gameDivider.className += ' active';   
-    resultsField.innerHTML = 'Acertaste ' + rightAnswer + ' em ' + maxSteps;
-
-    nextLevelBtn.addEventListener('click', advanceLevel);
-
-    level++;
-  }
+  startLevel();
 }
 
 
@@ -158,13 +158,13 @@ function startLevel() {
 }
 
 
-// Hide feedback modal and call the start level function
-function advanceLevel() {
-  var gameDivider = document.getElementsByClassName('game-divider')[0],
-      gameWrapper = document.getElementsByClassName('game-wrapper')[0];
+// Reset and hide the user input field and show 
+// the generated number field again
+function resetNumber() {
+  document.getElementById('player-input').value = "";
+  var numberField = document.getElementsByClassName('numbers-container__number')[0],
+      playerInput = document.getElementsByClassName('numbers-container__input')[0];
 
-  gameWrapper.className = 'game-wrapper';
-  gameDivider.className = 'game-divider';
-
-  startLevel();
+  numberField.className = "numbers-container__number";
+  playerInput.className = "numbers-container__input";
 }
